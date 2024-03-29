@@ -96,9 +96,8 @@ const WritePost = () => {
 
     fetchData();
 
-    // Cleanup function to cancel any pending requests if component unmounts
+
     return () => {
-      // Cleanup logic, if needed
     };
   }, []);
 
