@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { fetchCategories, addCategory } from '../hooks/category-hook'; // Import the custom hook
+import { fetchCategories, addCategory } from '../hooks/category-hook'; 
 
 const CreateCategory = () => {
   const [categories, setCategories] = useState([]);
@@ -23,26 +23,23 @@ const CreateCategory = () => {
 
     fetchData();
 
-    // Cleanup function to cancel any pending requests if component unmounts
+
     return () => {
-      // Cleanup logic, if needed
+
     };
   }, []);
 
   const handleAddCategory = async () => {
     try {
-      // Call the addCategory function to add the new category
       await addCategory(newCategory);
       
-      // Fetch categories again to update the list
+
       const updatedCategories = await fetchCategories();
       setCategories(updatedCategories);
 
-      // Clear the input field
       setNewCategory('');
     } catch (error) {
       console.error('Error adding category:', error);
-      // Handle error if needed
     }
   };
 
