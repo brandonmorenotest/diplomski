@@ -7,7 +7,7 @@ const CategoryDropdown = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
   const [error, setError] = useState(null);
-  const [isOpen, setIsOpen] = useState(false); // State to track whether the dropdown is open or closed
+  const [isOpen, setIsOpen] = useState(false); 
   
   useEffect(() => {
     const fetchData = async () => {
@@ -24,9 +24,7 @@ const CategoryDropdown = () => {
 
     fetchData();
 
-    // Cleanup function to cancel any pending requests if component unmounts
     return () => {
-      // Cleanup logic, if needed
     };
   }, []);
 
@@ -34,11 +32,11 @@ const CategoryDropdown = () => {
     <div className="relative inline-block">
       <button 
         className="text-base text-gray-600 dark:text-white font-semibold px-3 py-1 rounded-full border border-gray-400 dark:border-gray-600 focus:outline-none"
-        onClick={() => setIsOpen(!isOpen)} // Toggle isOpen state on button click
+        onClick={() => setIsOpen(!isOpen)}
       >
         All Categories
       </button>
-      {isOpen && ( // Render the categories only if isOpen is true
+      {isOpen && ( 
         <ul className="absolute top-full left-0 w-48 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-b-md shadow-md dark:text-white">
           {isLoading ? (
             <li>Loading...</li>
